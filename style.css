@@ -166,3 +166,63 @@ button:hover{
 .feature-section-right .learn{
     padding-top: 30px;
 }
+.feature-section-2{
+    height: 150px;
+    background-color: rgb(219, 219, 219);
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+.feature-section-2 .sub-feature-section{
+    display: flex;
+    padding: 20px;
+    
+}
+.feature-section-2 ul{
+    display: flex;
+    gap: 100px;
+}
+.feature-section-2 ul li{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    gap: 20px;
+    padding: 30px ;
+}
+.feature-section-2 ul li i{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+.feature-section-2 div{
+    display: flex;
+    flex-direction: column;
+}
+.Free-Shipping{
+    background-color: white;
+}
+.Returns{
+    background-color: white;
+}
+.Gift{
+    background-color: white;
+}
+.Payments{
+    background-color: white;
+}
+.feature-section-2 ul li.Free-Shipping i {
+    font-size: 35px; 
+}
+.feature-section-2 ul li.Returns i {
+    font-size: 35px; 
+}
+.feature-section-2 ul li.Gift i {
+    font-size: 35px; 
+}
+.feature-section-2 ul li.Payments i {
+    font-size: 35px; 
+}
