@@ -33,7 +33,7 @@
                         <ul>
                             <li><a href="#"><i class="fa-solid fa-heart"></i></a></li>
                             <li><a href="#"><i class="fa-solid fa-cart-shopping"></i></a></li>
-                            <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
+                            <li><a href="./login.html"><i class="fa-solid fa-user"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -106,9 +106,93 @@
                 </div>
             </div>
            
-         
-        </div>
+            <!-- product -->
+            <section class="product-section">
+                <h2>Our Products</h2>
+                <div class="product-grid">
+                    <div class="product-item">
+                        <img src="./image/Flowers Purple Garden Summer Bright - Flower PNG Image With Transparent Background png - Free PNG Images.jpeg" alt="Flower 1">
+                        <h3>Rose</h3>
+                        <p class="price">$10</p>
+                        <button>Add to Cart</button>
+                    </div>
+                    <div class="product-item">
+                        <img src="./image/phalaenopsis-orchid-flower.jpg" alt="Flower 2">
+                        <h3>Lily</h3>
+                        <p class="price">$8</p>
+                        <button>Add to Cart</button>
+                    </div>
+                    <!-- Add more product items as needed -->
+                </div>
+            </section>
+         <!-- Review section -->
+        <!-- <section class="review-section">
+            <h2>Customer Reviews</h2>
+            <div class="review-card">
+                <div class="review-info">
+                    <div class="reviewer">
+                        <img src="avatar.jpg" alt="Reviewer Avatar">
+                        <h3>John Doe</h3>
+                    </div>
+                    <div class="rating">
+                        <span>&#9733;</span>
+                        <span>&#9733;</span>
+                        <span>&#9733;</span>
+                        <span>&#9734;</span>
+                        <span>&#9734;</span>
+                    </div>
+                </div>
+                <p class="review-text">
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.
+                    Fusce fringilla consequat ante, in finibus dolor convallis nec."
+                </p>
+            </div>
+            
+        </section> -->
+
+        <!-- contact us -->
+            <section class="contact-section">
+                <h2>Contact Us</h2>
+                <p>Feel free to reach out to us with any questions or inquiries.</p>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit">Send Message</button>
+                    </div>
+                </form>
+            </section>
+
+            <footer>
+                <div class="footer-container">
+                    
+                    <div class="footer-contact-info">
+                        <p>Contact us:</p>
+                        <p>Email: info@example.com</p>
+                        <p>Phone: +1234567890</p>
+                    </div>
+                    <div class="footer-social-links">
+                        <a href="#">Facebook</a>
+                        <a href="#">Twitter</a>
+                        <a href="#">Instagram</a>
+                    </div>
+                </div>
+            </footer>
     </div>
+
+            
+        </div>
+   
 
 
     <script>
@@ -117,7 +201,58 @@
           navbar.classList.toggle("show");
     
         }
-        
-      </script>
+        // Keep track of login state
+        // let isLoggedIn = false;
+
+        // // Function to handle user icon click
+        // function toggleLogin() {
+        //     const userIcon = document.querySelector('.fa-user');
+        //     if (isLoggedIn) {
+        //         // If logged in, perform logout action
+        //         // For example, redirect to logout page or clear session
+        //         alert('Logged out successfully!');
+        //         isLoggedIn = false;
+        //     } else {
+        //         // If not logged in, perform login action
+        //         // For example, show login modal or redirect to login page
+        //         alert('Please log in first!');
+        //         isLoggedIn = true;
+        //     }
+        //     // Toggle login/logout icon
+        //     userIcon.classList.toggle('fa-sign-out-alt', isLoggedIn);
+        // }
+
+        // // Add event listener to user icon
+        // document.querySelector('.fa-user').addEventListener('click', toggleLogin);
+        // script.js
+
+document.addEventListener("DOMContentLoaded", function() {
+    const addToCartButtons = document.querySelectorAll(".add-to-cart");
+
+    addToCartButtons.forEach(button => {
+        button.addEventListener("click", addToCart);
+    });
+
+    function addToCart(event) {
+        const button = event.target;
+        const product = button.closest(".product-item");
+        const name = product.dataset.name;
+        const price = parseFloat(product.dataset.price);
+
+        addItemToCart(name, price);
+    }
+
+    function addItemToCart(name, price) {
+        const cartItem = document.createElement("div");
+        cartItem.classList.add("cart-item");
+        cartItem.innerHTML = `
+            <span>${name}</span>
+            <span>$${price}</span>
+        `;
+        document.querySelector(".cart-items").appendChild(cartItem);
+    }
+});
+
+    </script>
 </body>
 </html>
